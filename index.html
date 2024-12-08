@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bake at Your Own Risk!</title>
+    <!-- FontAwesome CDN for festive text fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet"> <!-- Festive font -->
+    <!-- Canvas Confetti from CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.0/dist/confetti.browser.min.js"></script> <!-- Confetti JS -->
     <style>
         /* Global Styles */
         body {
@@ -48,13 +52,6 @@
             font-size: 1.2em;
         }
 
-        /* Video Styles */
-        iframe {
-            max-width: auto; /* Make video iframe responsive */
-            height: auto;
-            margin-top: 20px;
-        }
-
         /* Footer Styles */
         footer {
             background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
@@ -63,6 +60,54 @@
             position: fixed;
             width: 100%;
             bottom: 0;
+        }
+
+        /* Button Styles */
+        .play-button-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .play-button {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: rgba(255, 77, 77, 0.5); /* 50% transparent background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease-in-out;
+            background-image: url('https://mimi-panda.com/wp-content/uploads/2024/09/santa-claus-coloring-pages-free-2.jpg'); /* Santa Claus image */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .play-button:hover {
+            transform: scale(1.1);
+        }
+
+        /* Text under the button */
+        .play-text {
+            font-family: 'Great Vibes', cursive; /* Festive script font */
+            font-size: 1.8em;
+            color: #fff;
+            font-weight: bold;
+            margin-top: 10px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Added text shadow for a festive look */
+            letter-spacing: 1px;
+            transform: scale(1.1);
+        }
+
+        /* Hidden Audio Player */
+        audio {
+            display: none; /* Hide audio player */
         }
 
         /* Responsive Design */
@@ -90,19 +135,27 @@
 <body>
     <header>
         <h1>Bake at Your Own Risk 😉</h1>
-</header>
+    </header>
     <div class="content christmas-theme">
         <p style="font-size: 1.5em;">Enjoy your festive season with our recipe.</p>
-        <div class="video-container">
-            <iframe 
-                width="315" 
-                height="315" 
-                src="https://www.youtube.com/embed/iq5c_WG3BTM?autoplay=1&loop=1&playlist=iq5c_WG3BTM" 
-                frameborder="0" 
-                allow="autoplay; encrypted-media" 
-                allowfullscreen>
-            </iframe>
+
+        <!-- The hidden audio player -->
+        <audio id="christmasAudio" loop>
+            <source src="https://raw.githubusercontent.com/Brok3-sam/Bake-at-your-own-risk/main/Christmas%20music.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+
+        <!-- Wrapper for the Play Button and Text -->
+        <div class="play-button-wrapper">
+            <!-- Santa Claus Play Button -->
+            <button class="play-button" onclick="toggleAudio(); triggerConfetti()">
+                <!-- Button now has the Santa Claus image as background -->
+            </button>
+
+            <!-- Play Me Text -->
+            <div class="play-text">Play Me</div>
         </div>
+
         <div class="recipe">
             <h2>Zubereitung</h2>
             <p><strong>Kuchenmischung für 1 Schoko-Küchlein zur Zubereitung mit 5 EL (50 ml) Milch</strong></p>
@@ -112,6 +165,38 @@
             </ol>
         </div>
     </div>
+    <footer>
+        <p>© 2024 Bake at Your Own Risk</p>
     </footer>
+
+    <script>
+        // Variable to track whether the audio is playing or not
+        var isAudioPlaying = false;
+        var audio = document.getElementById("christmasAudio");
+
+        // Function to toggle audio play/pause
+        function toggleAudio() {
+            if (isAudioPlaying) {
+                // If the audio is playing, stop it
+                audio.pause();
+                isAudioPlaying = false;
+            } else {
+                // If the audio is not playing, start it and loop
+                audio.play();
+                isAudioPlaying = true;
+            }
+        }
+
+        // Function to trigger the confetti animation
+        function triggerConfetti() {
+            console.log("Confetti triggered!");  // Debugging line to check if this is triggered
+            confetti({
+                particleCount: 150,
+                spread: 70,
+                origin: { x: 0.5, y: 0.5 },
+                colors: ['#ff0000', '#00ff00', '#0000ff', '#ffff00'],
+            });
+        }
+    </script>
 </body>
 </html>
