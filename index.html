@@ -15,14 +15,21 @@
             font-family: 'Arial', sans-serif;
             text-align: center;
             color: #333;
+            background: url('https://images.unsplash.com/photo-1511268011861-691ed210aae8?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&dl=toni-cuenca-CvFARq2qu8Y-unsplash.jpg') 
+                        no-repeat center center fixed;
+            background-size: cover; /* Fullscreen background */
         }
 
         /* Header Styles */
         header {
-            background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
             padding: 20px;
             color: white;
+            border-radius: 10px; /* Rounded corners */
+            margin: 10px auto; /* Center the header */
+            width: 80%; /* Limit the header width */
         }
+
         h1 {
             font-size: 3em;
             margin: 0;
@@ -31,19 +38,13 @@
         /* Content Styles */
         .content {
             padding: 20px;
-        }
-        .christmas-theme {
-            background: url('https://images.unsplash.com/photo-1511268011861-691ed210aae8?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&dl=toni-cuenca-CvFARq2qu8Y-unsplash.jpg') 
-                no-repeat center center fixed;
-            background-size: cover;
-            padding: 50px;
-            color: white; /* Adjusted for better contrast */
-            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7); /* Add text shadow for readability */
+            color: white; /* Make text color white for better contrast */
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7); /* Add text shadow */
         }
 
         /* Recipe Section */
         .recipe {
-            background-color: rgba(0, 0, 0, 0.6); /* Dark semi-transparent box */
+            background-color: rgba(0, 0, 0, 0.6); /* Dark semi-transparent background */
             padding: 20px;
             border-radius: 10px;
             margin-top: 20px;
@@ -136,10 +137,9 @@
     <header>
         <h1>Bake at Your Own Risk 😉</h1>
     </header>
-    <div class="content christmas-theme">
+    <div class="content">
          <p style="font-size: 2.5em;">Frohe Weihnachten! </p>
          <p style="font-size: 1.5em;">Sajeel & Hunaiza ❤️</p>
-
 
         <!-- The hidden audio player -->
         <audio id="christmasAudio" loop>
