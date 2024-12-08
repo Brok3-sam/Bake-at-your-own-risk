@@ -5,12 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bake at Your Own Risk!</title>
     <style>
+        /* Global Styles */
         body {
             margin: 0;
             font-family: 'Arial', sans-serif;
             text-align: center;
             color: #333;
         }
+
+        /* Header Styles */
         header {
             background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
             padding: 20px;
@@ -20,16 +23,21 @@
             font-size: 3em;
             margin: 0;
         }
+
+        /* Content Styles */
         .content {
             padding: 20px;
         }
         .christmas-theme {
-            background: url('https://images.unsplash.com/photo-1511268011861-691ed210aae8?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&dl=toni-cuenca-CvFARq2qu8Y-unsplash.jpg') no-repeat center center fixed;
+            background: url('https://images.unsplash.com/photo-1511268011861-691ed210aae8?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&dl=toni-cuenca-CvFARq2qu8Y-unsplash.jpg') 
+                no-repeat center center fixed;
             background-size: cover;
             padding: 50px;
             color: white; /* Adjusted for better contrast */
             text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7); /* Add text shadow for readability */
         }
+
+        /* Recipe Section */
         .recipe {
             background-color: rgba(0, 0, 0, 0.6); /* Dark semi-transparent box */
             padding: 20px;
@@ -39,9 +47,15 @@
             text-align: left;
             font-size: 1.2em;
         }
-        .video-container {
+
+        /* Video Styles */
+        iframe {
+            max-width: 100%; /* Make video iframe responsive */
+            height: auto;
             margin-top: 20px;
         }
+
+        /* Footer Styles */
         footer {
             background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
             padding: 10px;
@@ -50,14 +64,35 @@
             width: 100%;
             bottom: 0;
         }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            body {
+                font-size: 16px; /* Adjust font size */
+                padding: 10px; /* Reduce padding */
+            }
+            header h1 {
+                font-size: 2em; /* Scale down header font size */
+            }
+            .content {
+                padding: 10px; /* Reduce padding for content */
+            }
+            iframe {
+                width: 100%; /* Adjust iframe width */
+                height: auto;
+            }
+            .recipe {
+                font-size: 1em; /* Adjust font size for better readability */
+            }
+        }
     </style>
 </head>
 <body>
     <header>
-        <h1>Bake at Your Own Risk 😉</h1>
+        <h1>Bake at Your Own Risk!</h1>
     </header>
     <div class="content christmas-theme">
-        <p style="font-size: 1.5em;">Enjoy the festive season with our recipe.</p>
+        <p style="font-size: 1.5em;">Enjoy your festive season with our recipe.</p>
         <div class="video-container">
             <iframe 
                 width="560" 
